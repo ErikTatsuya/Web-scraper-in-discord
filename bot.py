@@ -5,7 +5,7 @@ import discord
 import ai
 import json
 import random
-
+import time
 
 
 
@@ -83,6 +83,16 @@ async def get_link(ctx):
 
     except Exception as e:
         await ctx.send(f"erro ao gerar resposta.\n {e}")
+
+
+@bot.command(name="spam", help="spama muitas mensagens.")
+async def spam_message(ctx):
+    for i in range(100):
+        time.sleep(0.5)
+        ctx.send(i + 1)
+        time.sleep(3)
+        ctx.send("spamei demais. spamagem feita com sucesso.")
+        
 
 load_dotenv()
 token = os.getenv("DISCORD_TOKEN")
