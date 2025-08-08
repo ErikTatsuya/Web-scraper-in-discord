@@ -89,9 +89,9 @@ async def get_link(ctx):
 async def spam_message(ctx):
     for i in range(100):
         time.sleep(0.5)
-        ctx.send(i + 1)
+        await ctx.send(i + 1)
         time.sleep(3)
-        ctx.send("spamei demais. spamagem feita com sucesso.")
+    await ctx.send("spamei demais. spamagem feita com sucesso.")
         
 
 load_dotenv()
