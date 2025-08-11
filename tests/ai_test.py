@@ -2,10 +2,12 @@ from google.api_core import exceptions
 from dotenv import load_dotenv
 import google.generativeai as genai
 import os
-import sys
 
 
-async def execute_ai(question):
+
+
+
+def execute_ai(question):
 
     os.system("cls")
 
@@ -22,15 +24,3 @@ async def execute_ai(question):
 
     except exceptions.ResourceExhausted:
         return "ERRO."
-    
-
-if __name__ == "__main__":
-
-    sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'tests'))
-
-    import ai_test
-
-    question_test = str(input("question: "))
-
-    ai_test.execute_ai(question_test)
-
